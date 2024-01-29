@@ -3,7 +3,17 @@
 	import ToDo from '../components/ToDo.svelte';
 	import LL from '@/i18n/i18n-svelte';
 
-	let ToDoList: any = [];
+	let ToDoList: any = [
+		1,
+		2,
+		3,
+		4,
+		4,
+		4,
+		4,
+		4,
+		{ content: 'Hello guys', editing: false, checked: false }
+	];
 	let textInput: string = '';
 	function addToDo(): void {
 		if (textInput !== '') {
@@ -38,6 +48,8 @@
 	>
 </form>
 
-<div class="overflow-y-scroll flex-grow max-h-full pt-2">
-	<ToDo {addToDo} {ToDoList} />
+<div class="relative flex-grow pt-2">
+	<div class="absolute inset-0 overflow-y-scroll">
+		<ToDo {addToDo} {ToDoList} />
+	</div>
 </div>
