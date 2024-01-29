@@ -3,17 +3,7 @@
 	import ToDo from '../components/ToDo.svelte';
 	import LL from '@/i18n/i18n-svelte';
 
-	let ToDoList: any = [
-		1,
-		2,
-		3,
-		4,
-		4,
-		4,
-		4,
-		4,
-		{ content: 'Hello guys', editing: false, checked: false }
-	];
+	let ToDoList: any = [];
 	let textInput: string = '';
 	function addToDo(): void {
 		if (textInput !== '') {
