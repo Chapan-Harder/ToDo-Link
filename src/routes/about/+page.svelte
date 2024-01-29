@@ -3,7 +3,7 @@
 	import MePicture from '@/lib/pictures/Me.jpg';
 </script>
 
-<h1 class="text-center text-teal-50 text-5xl font-sans font-black capitalize mt-24 mb-16">
+<h1 class="text-center text-teal-50 text-5xl font-sans font-black capitalize mt-11 mb-16">
 	{$LL.About()}
 </h1>
 

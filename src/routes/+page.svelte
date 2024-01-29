@@ -18,7 +18,7 @@
 	<title>{$LL.ToDoTitle()}</title>
 </svelte:head>
 
-<h1 class="text-center text-teal-50 text-5xl font-sans font-black capitalize mt-24 mb-12">
+<h1 class="text-center text-teal-50 text-5xl font-sans font-black capitalize mt-11 mb-12">
 	{$LL.ToDo_list()}
 </h1>
 
