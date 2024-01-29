@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { FormEventHandler } from 'svelte/elements';
 	import ToDo from '../components/ToDo.svelte';
 	import LL from '@/i18n/i18n-svelte';
 
@@ -24,7 +25,7 @@
 <p class="text-lg text-slate-400 font-sans font-normal capitalize mb-4">
 	{$LL.enter_your_to_do_here()}
 </p>
-<div class="flex justify-center gap-2 mb-7">
+<form class="flex justify-center gap-2 mb-7" on:submit={addToDo}>
 	<input
 		placeholder={$LL.Add_ToDo()}
 		class="flex flex-auto bg-white/5 border-teal50 p-2 border-white/20 border-2 font-sans font-normal rounded-md text-white"
@@ -33,10 +34,10 @@
 	/>
 	<button
 		class="bg-cyan-600 rounded-md text-white font-sans font-normal capitalize h-11 w-auto p-2"
-		on:click={addToDo}>{$LL.add()}</button
+		type="submit">{$LL.add()}</button
 	>
-</div>
+</form>
 
-<div class="overflow-y-scroll flex-grow max-h-full">
+<div class="overflow-y-scroll flex-grow max-h-full pt-2">
 	<ToDo {addToDo} {ToDoList} />
 </div>

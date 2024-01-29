@@ -15,7 +15,10 @@
 </script>
 
 {#each ToDoList as ToDo, counter}
-	<section class="flex items-baseline gap-2 w-auto mx-3 mb-2">
+	<form
+		on:submit={() => setEdeting(counter, false)}
+		class="flex items-baseline gap-2 w-auto mx-3 mb-2"
+	>
 		{#if ToDo.editing}
 			<input
 				class="flex flex-auto bg-white/5 border-teal50 p-2 border-white/20 border-2 font-sans font-normal h-11 rounded-md text-white"
@@ -45,7 +48,7 @@
 			{#if ToDo.editing}
 				<button
 					class="bg-cyan-600 rounded-md text-white font-sans font-normal capitalize h-11 w-auto p-2"
-					on:click={() => setEdeting(counter, false)}>{$LL.save()}</button
+					type="submit">{$LL.save()}</button
 				>
 			{:else}
 				<button
@@ -59,5 +62,5 @@
 			>
 		</div>
 		<!-- Buttons End -->
-	</section>
+	</form>
 {/each}
